@@ -14,6 +14,10 @@
   .hidden-content.open { max-height: 1500px; opacity: 1; }
   .btn { transition: background-color 0.3s ease, transform 0.2s ease; }
   .btn:hover { transform: translateY(-2px); }
+  .avatar-sticker { transform: rotate(-3deg); border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+  .avatar-sticker:hover { transform: rotate(0deg) scale(1.05); transition: transform 0.3s ease; }
+  .bubble { background: #e3f2fd; padding: 8px 16px; border-radius: 9999px; display: inline-block; margin: 4px; font-size: 14px; transition: 0.2s; }
+  .bubble:hover { background: #bbdefb; transform: scale(1.05); }
 </style>
 </head>
 <body class="text-gray-800">
@@ -23,33 +27,38 @@
   <nav class="container mx-auto flex justify-between items-center py-3 px-6">
     <h1 class="text-xl font-bold" id="site-title"></h1>
     <ul class="flex gap-4">
-      <li><a href="#contacts" class="hover:underline" id="navContacts"></a></li>
       <li><a href="#about" class="hover:underline" id="navAbout"></a></li>
+      <li><a href="#contacts" class="hover:underline" id="navContacts"></a></li>
       <li><a href="#education" class="hover:underline" id="navEducation"></a></li>
-      <li><a href="#skills" class="hover:underline" id="navSkills"></a></li>
       <li><a href="#experience" class="hover:underline" id="navExperience"></a></li>
+      <li><a href="#skills" class="hover:underline" id="navSkills"></a></li>
     </ul>
     <button id="lang-toggle" class="ml-4 bg-blue-600 text-white px-3 py-1 rounded-lg btn"></button>
   </nav>
 </header>
 
 <main class="container mx-auto pt-28 px-4 space-y-8" id="resume">
+
+  <!-- NAME + AVATAR -->
+  <section id="about" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md flex flex-col md:flex-row items-center md:justify-between">
+    <div class="flex-1">
+      <h2 class="text-3xl font-semibold mb-2" id="name" contenteditable="true"></h2>
+      <p class="text-lg mb-4" id="position" contenteditable="true"></p>
+      <div id="about-bubbles" class="flex flex-wrap"></div>
+    </div>
+    <div class="mt-4 md:mt-0 md:ml-6">
+      <img src="FullSizeRender.jpg" alt="Avatar" class="w-36 h-44 object-cover rounded-xl avatar-sticker">
+    </div>
+  </section>
+
   <!-- CONTACTS -->
   <section id="contacts" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
     <h3 class="text-2xl font-semibold mb-2" id="contacts-title"></h3>
     <ul class="space-y-1">
-      <li id="phone" contenteditable="true"></li>
       <li id="email" contenteditable="true"></li>
       <li><a id="telegram-link" href="https://t.me/AndreevaKs" target="_blank" class="text-blue-600 hover:underline"></a></li>
       <li id="location" contenteditable="true"></li>
     </ul>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
-    <h2 class="text-3xl font-semibold mb-2" id="name" contenteditable="true"></h2>
-    <p class="text-lg" id="position" contenteditable="true"></p>
-    <p class="mt-2" id="about-text" contenteditable="true"></p>
   </section>
 
   <!-- EDUCATION -->
@@ -59,16 +68,16 @@
     <p id="courses-text" contenteditable="true"></p>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
-    <h3 class="text-2xl font-semibold mb-2" id="skills-title"></h3>
-    <div class="flex flex-wrap gap-2" id="skills-list"></div>
-  </section>
-
   <!-- EXPERIENCE -->
   <section id="experience">
     <h3 class="text-2xl font-semibold mb-4" id="experience-title"></h3>
     <div id="experience-cards"></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
+    <h3 class="text-2xl font-semibold mb-2" id="skills-title"></h3>
+    <div class="flex flex-wrap gap-2" id="skills-list"></div>
   </section>
 
   <!-- ACTION BUTTONS -->
@@ -80,18 +89,24 @@
 </main>
 
 <script>
-// === Данные для RU и EN ===
 const data = {
   ru: {
     siteTitle: "Моё резюме",
-    nav: ["Контакты","Обо мне","Образование","Навыки","Опыт"],
+    nav: ["Обо мне","Контакты","Образование","Опыт","Навыки"],
     buttons: ["Сохранить","Сбросить","Скачать PDF"],
     toggle: "EN",
-    contactsTitle: "Контакты",
     name: "Андреева Ксения",
     position: "IT HR / HRBP / HRD",
-    aboutText: "Хорошая насмотренность в бизнесе и HR. Умею оценивать кандидатов, собирать команды. Принимаю решения, несу ответственность. Понимаю бизнес, могу решить многие проблемы и выстроить, автоматизировать процессы.",
-    phone: "Телефон: +7 (911) 2620517",
+    aboutBubbles: [
+      "Хорошая насмотренность в Web-3 бизнесе",
+      "Оцениваю кандидатов",
+      "Собираю команды",
+      "Автоматизирую рутину",
+      "Решаю проблемы бизнеса",
+      "Использую AI в работе и жизни",
+      "Обеспечиваю рост бизнеса"
+    ],
+    contactsTitle: "Контакты",
     email: "Email: ksandjob@gmail.com",
     telegram: "Telegram: @AndreevaKs",
     location: "Локация: Вьетнам",
@@ -114,14 +129,21 @@ const data = {
   },
   en: {
     siteTitle: "My Resume",
-    nav: ["Contacts","About","Education","Skills","Experience"],
+    nav: ["About","Contacts","Education","Experience","Skills"],
     buttons: ["Save","Reset","Download PDF"],
     toggle: "RU",
-    contactsTitle: "Contacts",
     name: "Kseniia Andreeva",
     position: "IT HR / HRBP / HRD",
-    aboutText: "Experienced HR professional with a strong business mindset. Skilled in recruitment, building teams, HR automation, and developing strategies to optimize processes.",
-    phone: "Phone: +7 (911) 2620517",
+    aboutBubbles: [
+      "Strong expertise in Web-3 business",
+      "Candidate assessment",
+      "Building strong teams",
+      "Automating routine tasks",
+      "Solving business challenges",
+      "Using AI in work and life",
+      "Driving business growth"
+    ],
+    contactsTitle: "Contacts",
     email: "Email: ksandjob@gmail.com",
     telegram: "Telegram: @AndreevaKs",
     location: "Location: Vietnam",
@@ -144,28 +166,37 @@ const data = {
   }
 };
 
-// === Логика смены языка и отрисовки ===
 function render(lang) {
   const d = data[lang];
   document.getElementById('site-title').textContent = d.siteTitle;
-  document.getElementById('navContacts').textContent = d.nav[0];
-  document.getElementById('navAbout').textContent = d.nav[1];
+  document.getElementById('navAbout').textContent = d.nav[0];
+  document.getElementById('navContacts').textContent = d.nav[1];
   document.getElementById('navEducation').textContent = d.nav[2];
-  document.getElementById('navSkills').textContent = d.nav[3];
-  document.getElementById('navExperience').textContent = d.nav[4];
-  document.getElementById('contacts-title').textContent = d.contactsTitle;
+  document.getElementById('navExperience').textContent = d.nav[3];
+  document.getElementById('navSkills').textContent = d.nav[4];
+  document.getElementById('lang-toggle').textContent = d.toggle;
   document.getElementById('name').textContent = d.name;
   document.getElementById('position').textContent = d.position;
-  document.getElementById('about-text').textContent = d.aboutText;
-  document.getElementById('phone').textContent = d.phone;
+
+  const bubbles = document.getElementById('about-bubbles');
+  bubbles.innerHTML = '';
+  d.aboutBubbles.forEach(b => {
+    const span = document.createElement('span');
+    span.className = "bubble";
+    span.textContent = b;
+    bubbles.appendChild(span);
+  });
+
+  document.getElementById('contacts-title').textContent = d.contactsTitle;
   document.getElementById('email').textContent = d.email;
   document.getElementById('telegram-link').textContent = d.telegram;
   document.getElementById('location').textContent = d.location;
+
   document.getElementById('education-title').textContent = d.educationTitle;
   document.getElementById('education-text').textContent = d.educationText;
   document.getElementById('courses-text').textContent = d.coursesText;
-  document.getElementById('skills-title').textContent = d.skillsTitle;
 
+  document.getElementById('skills-title').textContent = d.skillsTitle;
   const skillsDiv = document.getElementById('skills-list');
   skillsDiv.innerHTML = '';
   d.skills.forEach(skill => {
@@ -199,10 +230,8 @@ function render(lang) {
   document.getElementById('save').textContent = d.buttons[0];
   document.getElementById('reset').textContent = d.buttons[1];
   document.getElementById('download').textContent = d.buttons[2];
-  document.getElementById('lang-toggle').textContent = d.toggle;
 }
 
-// === Тоггл для карточек опыта ===
 function addToggle(lang) {
   document.querySelectorAll('.toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -216,32 +245,27 @@ function addToggle(lang) {
 let currentLang = localStorage.getItem('lang') || 'ru';
 render(currentLang);
 
-// === Переключение языка ===
 document.getElementById('lang-toggle').addEventListener('click', () => {
   currentLang = currentLang === 'ru' ? 'en' : 'ru';
   localStorage.setItem('lang', currentLang);
   render(currentLang);
 });
 
-// === Сохранение ===
 document.getElementById('save').addEventListener('click', () => {
   localStorage.setItem(`resumeData_${currentLang}`, document.getElementById('resume').innerHTML);
   alert(currentLang === 'ru' ? 'Изменения сохранены!' : 'Changes saved!');
 });
 
-// === Сброс ===
 document.getElementById('reset').addEventListener('click', () => {
   localStorage.removeItem(`resumeData_${currentLang}`);
   render(currentLang);
 });
 
-// === Загрузка сохраненных данных ===
 window.addEventListener('load', () => {
   const saved = localStorage.getItem(`resumeData_${currentLang}`);
   if (saved) document.getElementById('resume').innerHTML = saved;
 });
 
-// === Скачать PDF ===
 document.getElementById('download').addEventListener('click', () => {
   html2pdf().from(document.getElementById('resume')).save(currentLang === 'ru' ? 'Резюме.pdf' : 'Resume.pdf');
 });
