@@ -21,86 +21,85 @@
 <!-- HEADER -->
 <header class="fixed top-0 left-0 w-full bg-white bg-opacity-80 shadow-md z-50">
   <nav class="container mx-auto flex justify-between items-center py-3 px-6">
-    <h1 class="text-xl font-bold" id="site-title">Моё резюме</h1>
+    <h1 class="text-xl font-bold" id="site-title"></h1>
     <ul class="flex gap-4">
-      <li><a href="#contacts" class="hover:underline" id="navContacts">Контакты</a></li>
-      <li><a href="#about" class="hover:underline" id="navAbout">Обо мне</a></li>
-      <li><a href="#education" class="hover:underline" id="navEducation">Образование</a></li>
-      <li><a href="#skills" class="hover:underline" id="navSkills">Навыки</a></li>
-      <li><a href="#experience" class="hover:underline" id="navExperience">Опыт</a></li>
+      <li><a href="#contacts" class="hover:underline" id="navContacts"></a></li>
+      <li><a href="#about" class="hover:underline" id="navAbout"></a></li>
+      <li><a href="#education" class="hover:underline" id="navEducation"></a></li>
+      <li><a href="#skills" class="hover:underline" id="navSkills"></a></li>
+      <li><a href="#experience" class="hover:underline" id="navExperience"></a></li>
     </ul>
-    <button id="lang-toggle" class="ml-4 bg-blue-600 text-white px-3 py-1 rounded-lg btn">EN</button>
+    <button id="lang-toggle" class="ml-4 bg-blue-600 text-white px-3 py-1 rounded-lg btn"></button>
   </nav>
 </header>
 
 <main class="container mx-auto pt-28 px-4 space-y-8" id="resume">
+  <!-- CONTACTS -->
+  <section id="contacts" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
+    <h3 class="text-2xl font-semibold mb-2" id="contacts-title"></h3>
+    <ul class="space-y-1">
+      <li id="phone" contenteditable="true"></li>
+      <li id="email" contenteditable="true"></li>
+      <li><a id="telegram-link" href="https://t.me/AndreevaKs" target="_blank" class="text-blue-600 hover:underline"></a></li>
+      <li id="location" contenteditable="true"></li>
+    </ul>
+  </section>
 
-<!-- CONTACTS -->
-<section id="contacts" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
-  <h3 class="text-2xl font-semibold mb-2" id="contacts-title">Контакты</h3>
-  <ul class="space-y-1">
-    <li contenteditable="true" id="phone">Телефон: +7 (911) 2620517</li>
-    <li contenteditable="true" id="email">Email: ksandjob@gmail.com</li>
-    <li><a id="telegram-link" href="https://t.me/AndreevaKs" target="_blank" class="text-blue-600 hover:underline">Telegram: @AndreevaKs</a></li>
-    <li contenteditable="true" id="location">Локация: Вьетнам</li>
-  </ul>
-</section>
+  <!-- ABOUT -->
+  <section id="about" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
+    <h2 class="text-3xl font-semibold mb-2" id="name" contenteditable="true"></h2>
+    <p class="text-lg" id="position" contenteditable="true"></p>
+    <p class="mt-2" id="about-text" contenteditable="true"></p>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
-  <h2 class="text-3xl font-semibold mb-2" id="name" contenteditable="true">Андреева Ксения</h2>
-  <p class="text-lg" id="position" contenteditable="true">IT HR / HRBP / HRD</p>
-  <p class="mt-2" id="about-text" contenteditable="true">
-    Хорошая насмотренность в бизнесе и HR. Умею оценивать кандидатов, собирать команды. Принимаю решения, несу ответственность. Понимаю бизнес, могу решить многие проблемы и выстроить, автоматизировать процессы.
-  </p>
-</section>
+  <!-- EDUCATION -->
+  <section id="education" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
+    <h3 class="text-2xl font-semibold mb-2" id="education-title"></h3>
+    <p id="education-text" contenteditable="true"></p>
+    <p id="courses-text" contenteditable="true"></p>
+  </section>
 
-<!-- EDUCATION -->
-<section id="education" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
-  <h3 class="text-2xl font-semibold mb-2" id="education-title">Образование</h3>
-  <p id="education-text" contenteditable="true">СПбГЭУ (ИНЖЭКОН), 2012 — Экономическая социология</p>
-  <p id="courses-text" contenteditable="true">Курсы: Agile (2017), Основы программирования (2016), HR-брендинг (2016)</p>
-</section>
+  <!-- SKILLS -->
+  <section id="skills" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
+    <h3 class="text-2xl font-semibold mb-2" id="skills-title"></h3>
+    <div class="flex flex-wrap gap-2" id="skills-list"></div>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills" class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md">
-  <h3 class="text-2xl font-semibold mb-2" id="skills-title">Навыки</h3>
-  <div class="flex flex-wrap gap-2" id="skills-list">
-    <span class="px-3 py-1 bg-blue-200 rounded-full">Рекрутмент</span>
-    <span class="px-3 py-1 bg-blue-200 rounded-full">Адаптация</span>
-    <span class="px-3 py-1 bg-blue-200 rounded-full">HR-бренд</span>
-    <span class="px-3 py-1 bg-blue-200 rounded-full">Agile</span>
-    <span class="px-3 py-1 bg-blue-200 rounded-full">Scrum</span>
-    <span class="px-3 py-1 bg-blue-200 rounded-full">Kanban</span>
-    <span class="px-3 py-1 bg-blue-200 rounded-full">Boolean Search</span>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h3 class="text-2xl font-semibold mb-4" id="experience-title"></h3>
+    <div id="experience-cards"></div>
+  </section>
+
+  <!-- ACTION BUTTONS -->
+  <div class="flex gap-4 mt-6">
+    <button id="save" class="bg-blue-600 text-white px-4 py-2 rounded-lg btn"></button>
+    <button id="reset" class="bg-gray-500 text-white px-4 py-2 rounded-lg btn"></button>
+    <button id="download" class="bg-green-600 text-white px-4 py-2 rounded-lg btn"></button>
   </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h3 class="text-2xl font-semibold mb-4" id="experience-title">Опыт работы</h3>
-  <div id="experience-cards"></div>
-</section>
-
-<!-- ACTION BUTTONS -->
-<div class="flex gap-4 mt-6">
-  <button id="save" class="bg-blue-600 text-white px-4 py-2 rounded-lg btn">Сохранить</button>
-  <button id="reset" class="bg-gray-500 text-white px-4 py-2 rounded-lg btn">Сбросить</button>
-  <button id="download" class="bg-green-600 text-white px-4 py-2 rounded-lg btn">Скачать PDF</button>
-</div>
-
 </main>
 
 <script>
+// === Данные для RU и EN ===
 const data = {
   ru: {
     siteTitle: "Моё резюме",
-    navContacts: "Контакты", navAbout: "Обо мне", navEducation: "Образование", navSkills: "Навыки", navExperience: "Опыт",
-    contactsTitle: "Контакты", name: "Андреева Ксения", position: "IT HR / HRBP / HRD",
+    nav: ["Контакты","Обо мне","Образование","Навыки","Опыт"],
+    buttons: ["Сохранить","Сбросить","Скачать PDF"],
+    toggle: "EN",
+    contactsTitle: "Контакты",
+    name: "Андреева Ксения",
+    position: "IT HR / HRBP / HRD",
     aboutText: "Хорошая насмотренность в бизнесе и HR. Умею оценивать кандидатов, собирать команды. Принимаю решения, несу ответственность. Понимаю бизнес, могу решить многие проблемы и выстроить, автоматизировать процессы.",
-    phone: "Телефон: +7 (911) 2620517", email: "Email: ksandjob@gmail.com", telegram: "Telegram: @AndreevaKs", location: "Локация: Вьетнам",
-    educationTitle: "Образование", educationText: "СПбГЭУ (ИНЖЭКОН), 2012 — Экономическая социология", coursesText: "Курсы: Agile (2017), Основы программирования (2016), HR-брендинг (2016)",
-    skillsTitle: "Навыки", skills: ["Рекрутмент","Адаптация","HR-бренд","Agile","Scrum","Kanban","Boolean Search"],
+    phone: "Телефон: +7 (911) 2620517",
+    email: "Email: ksandjob@gmail.com",
+    telegram: "Telegram: @AndreevaKs",
+    location: "Локация: Вьетнам",
+    educationTitle: "Образование",
+    educationText: "СПбГЭУ (ИНЖЭКОН), 2012 — Экономическая социология",
+    coursesText: "Курсы: Agile (2017), Основы программирования (2016), HR-брендинг (2016)",
+    skillsTitle: "Навыки",
+    skills: ["Рекрутмент","Адаптация","HR-бренд","Agile","Scrum","Kanban","Boolean Search"],
     experienceTitle: "Опыт работы",
     experience: [
       { title:"Chrona — Co-founder", period:"Апрель 2024 — Апрель 2025", bullets:["Создали Web3 HR-агентство с нуля","Запустили сервис и получили первые заказы за 6 месяцев","Выросли до 12 сотрудников","Услуги: рекрутинг для криптоиндустрии, AI-боты для HR"] },
@@ -115,12 +114,22 @@ const data = {
   },
   en: {
     siteTitle: "My Resume",
-    navContacts: "Contacts", navAbout: "About Me", navEducation: "Education", navSkills: "Skills", navExperience: "Experience",
-    contactsTitle: "Contacts", name: "Kseniia Andreeva", position: "IT HR / HRBP / HRD",
+    nav: ["Contacts","About","Education","Skills","Experience"],
+    buttons: ["Save","Reset","Download PDF"],
+    toggle: "RU",
+    contactsTitle: "Contacts",
+    name: "Kseniia Andreeva",
+    position: "IT HR / HRBP / HRD",
     aboutText: "Experienced HR professional with a strong business mindset. Skilled in recruitment, building teams, HR automation, and developing strategies to optimize processes.",
-    phone: "Phone: +7 (911) 2620517", email: "Email: ksandjob@gmail.com", telegram: "Telegram: @AndreevaKs", location: "Location: Vietnam",
-    educationTitle: "Education", educationText: "Saint Petersburg State University of Economics, 2012 — Bachelor's in Economic Sociology", coursesText: "Additional Courses: Agile (2017), Programming Basics (2016), HR Branding (2016)",
-    skillsTitle: "Skills", skills:["Recruitment","Onboarding","HR Branding","Agile","Scrum","Kanban","Boolean Search"],
+    phone: "Phone: +7 (911) 2620517",
+    email: "Email: ksandjob@gmail.com",
+    telegram: "Telegram: @AndreevaKs",
+    location: "Location: Vietnam",
+    educationTitle: "Education",
+    educationText: "Saint Petersburg State University of Economics, 2012 — Bachelor's in Economic Sociology",
+    coursesText: "Additional Courses: Agile (2017), Programming Basics (2016), HR Branding (2016)",
+    skillsTitle: "Skills",
+    skills: ["Recruitment","Onboarding","HR Branding","Agile","Scrum","Kanban","Boolean Search"],
     experienceTitle: "Work Experience",
     experience: [
       { title:"Chrona — Co-founder", period:"Apr 2024 — Apr 2025", bullets:["Founded a Web3 HR agency from scratch","Launched services and secured first clients within 6 months","Scaled the team to 12 employees","Services: crypto recruitment, HR automation via AI bots"] },
@@ -135,11 +144,41 @@ const data = {
   }
 };
 
-// Render experience cards dynamically
-function renderExperience(lang) {
-  const container = document.getElementById('experience-cards');
-  container.innerHTML = '';
-  data[lang].experience.forEach(job => {
+// === Логика смены языка и отрисовки ===
+function render(lang) {
+  const d = data[lang];
+  document.getElementById('site-title').textContent = d.siteTitle;
+  document.getElementById('navContacts').textContent = d.nav[0];
+  document.getElementById('navAbout').textContent = d.nav[1];
+  document.getElementById('navEducation').textContent = d.nav[2];
+  document.getElementById('navSkills').textContent = d.nav[3];
+  document.getElementById('navExperience').textContent = d.nav[4];
+  document.getElementById('contacts-title').textContent = d.contactsTitle;
+  document.getElementById('name').textContent = d.name;
+  document.getElementById('position').textContent = d.position;
+  document.getElementById('about-text').textContent = d.aboutText;
+  document.getElementById('phone').textContent = d.phone;
+  document.getElementById('email').textContent = d.email;
+  document.getElementById('telegram-link').textContent = d.telegram;
+  document.getElementById('location').textContent = d.location;
+  document.getElementById('education-title').textContent = d.educationTitle;
+  document.getElementById('education-text').textContent = d.educationText;
+  document.getElementById('courses-text').textContent = d.coursesText;
+  document.getElementById('skills-title').textContent = d.skillsTitle;
+
+  const skillsDiv = document.getElementById('skills-list');
+  skillsDiv.innerHTML = '';
+  d.skills.forEach(skill => {
+    const span = document.createElement('span');
+    span.className = "px-3 py-1 bg-blue-200 rounded-full";
+    span.textContent = skill;
+    skillsDiv.appendChild(span);
+  });
+
+  document.getElementById('experience-title').textContent = d.experienceTitle;
+  const expContainer = document.getElementById('experience-cards');
+  expContainer.innerHTML = '';
+  d.experience.forEach(job => {
     const card = document.createElement('div');
     card.className = "bg-white bg-opacity-80 p-4 rounded-xl shadow-md mb-4";
     card.innerHTML = `
@@ -152,14 +191,19 @@ function renderExperience(lang) {
         <ul class="list-disc ml-6 mt-2">
           ${job.bullets.map(b => `<li>${b}</li>`).join('')}
         </ul>
-      </div>
-    `;
-    container.appendChild(card);
+      </div>`;
+    expContainer.appendChild(card);
   });
-  addToggleEvents(lang);
+  addToggle(lang);
+
+  document.getElementById('save').textContent = d.buttons[0];
+  document.getElementById('reset').textContent = d.buttons[1];
+  document.getElementById('download').textContent = d.buttons[2];
+  document.getElementById('lang-toggle').textContent = d.toggle;
 }
 
-function addToggleEvents(lang) {
+// === Тоггл для карточек опыта ===
+function addToggle(lang) {
   document.querySelectorAll('.toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const content = btn.closest('div').nextElementSibling.nextElementSibling;
@@ -169,73 +213,38 @@ function addToggleEvents(lang) {
   });
 }
 
-function applyLanguage(lang) {
-  document.getElementById('site-title').textContent = data[lang].siteTitle;
-  document.getElementById('navContacts').textContent = data[lang].navContacts;
-  document.getElementById('navAbout').textContent = data[lang].navAbout;
-  document.getElementById('navEducation').textContent = data[lang].navEducation;
-  document.getElementById('navSkills').textContent = data[lang].navSkills;
-  document.getElementById('navExperience').textContent = data[lang].navExperience;
-  document.getElementById('contacts-title').textContent = data[lang].contactsTitle;
-  document.getElementById('name').textContent = data[lang].name;
-  document.getElementById('position').textContent = data[lang].position;
-  document.getElementById('about-text').textContent = data[lang].aboutText;
-  document.getElementById('phone').textContent = data[lang].phone;
-  document.getElementById('email').textContent = data[lang].email;
-  document.getElementById('telegram-link').textContent = data[lang].telegram;
-  document.getElementById('location').textContent = data[lang].location;
-  document.getElementById('education-title').textContent = data[lang].educationTitle;
-  document.getElementById('education-text').textContent = data[lang].educationText;
-  document.getElementById('courses-text').textContent = data[lang].coursesText;
-  document.getElementById('skills-title').textContent = data[lang].skillsTitle;
-  const skillsDiv = document.getElementById('skills-list');
-  skillsDiv.innerHTML = '';
-  data[lang].skills.forEach(skill => {
-    const span = document.createElement('span');
-    span.className = "px-3 py-1 bg-blue-200 rounded-full";
-    span.textContent = skill;
-    skillsDiv.appendChild(span);
-  });
-  document.getElementById('experience-title').textContent = data[lang].experienceTitle;
-  renderExperience(lang);
-  document.getElementById('save').textContent = lang === 'ru' ? 'Сохранить' : 'Save';
-  document.getElementById('reset').textContent = lang === 'ru' ? 'Сбросить' : 'Reset';
-  document.getElementById('download').textContent = lang === 'ru' ? 'Скачать PDF' : 'Download PDF';
-  document.getElementById('lang-toggle').textContent = lang === 'ru' ? 'EN' : 'RU';
-  localStorage.setItem('lang', lang);
-}
-
 let currentLang = localStorage.getItem('lang') || 'ru';
-applyLanguage(currentLang);
+render(currentLang);
 
-// Switch language
+// === Переключение языка ===
 document.getElementById('lang-toggle').addEventListener('click', () => {
   currentLang = currentLang === 'ru' ? 'en' : 'ru';
-  applyLanguage(currentLang);
+  localStorage.setItem('lang', currentLang);
+  render(currentLang);
 });
 
-// Save data
+// === Сохранение ===
 document.getElementById('save').addEventListener('click', () => {
-  localStorage.setItem('resumeData', document.getElementById('resume').innerHTML);
+  localStorage.setItem(`resumeData_${currentLang}`, document.getElementById('resume').innerHTML);
   alert(currentLang === 'ru' ? 'Изменения сохранены!' : 'Changes saved!');
 });
 
-// Reset
+// === Сброс ===
 document.getElementById('reset').addEventListener('click', () => {
-  localStorage.removeItem('resumeData'); location.reload();
+  localStorage.removeItem(`resumeData_${currentLang}`);
+  render(currentLang);
 });
 
-// Load saved
+// === Загрузка сохраненных данных ===
 window.addEventListener('load', () => {
-  const dataSaved = localStorage.getItem('resumeData');
-  if (dataSaved) document.getElementById('resume').innerHTML = dataSaved;
+  const saved = localStorage.getItem(`resumeData_${currentLang}`);
+  if (saved) document.getElementById('resume').innerHTML = saved;
 });
 
-// Download PDF
+// === Скачать PDF ===
 document.getElementById('download').addEventListener('click', () => {
   html2pdf().from(document.getElementById('resume')).save(currentLang === 'ru' ? 'Резюме.pdf' : 'Resume.pdf');
 });
 </script>
-
 </body>
 </html>
