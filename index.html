@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Резюме Андреева Ксения</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+  body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #ffffff, #b39ddb, #81d4fa); }
+  header { backdrop-filter: blur(10px); }
+  .hidden-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.5s ease; opacity: 0; }
+  .hidden-content.open { max-height: 1000px; opacity: 1; }
+</style>
+</head>
+<body class="text-gray-800">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full bg-white bg-opacity-70 shadow-md z-50">
+  <nav class="container mx-auto flex justify-between items-center py-3 px-6">
+    <h1 class="text-xl font-bold">Моё резюме</h1>
+    <ul class="flex gap-4">
+      <li><a href="#experience" class="hover:underline">Опыт</a></li>
+      <li><a href="#education" class="hover:underline">Образование</a></li>
+      <li><a href="#skills" class="hover:underline">Навыки</a></li>
+      <li><a href="#contacts" class="hover:underline">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container mx-auto pt-24 px-4 space-y-8" id="resume">
+
+<!-- ABOUT -->
+<section>
+  <h2 class="text-3xl font-semibold mb-2" contenteditable="true">Андреева Ксения</h2>
+  <p class="text-lg" contenteditable="true">IT HR / HRBP / HRD</p>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" class="bg-white bg-opacity-70 p-4 rounded-xl shadow-md">
+  <h3 class="text-2xl font-semibold mb-2">Контакты</h3>
+  <ul class="space-y-1">
+    <li contenteditable="true">Телефон: +7 (911) 2620517</li>
+    <li contenteditable="true">Email: ksandjob@gmail.com</li>
+    <li><a href="https://t.me/AndreevaKs" target="_blank" class="text-blue-600 hover:underline">Telegram: @AndreevaKs</a></li>
+    <li contenteditable="true">Локация: Вьетнам</li>
+  </ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h3 class="text-2xl font-semibold mb-4">Опыт работы</h3>
+
+  <!-- Card Example -->
+  <div class="bg-white bg-opacity-70 p-4 rounded-xl shadow-md mb-4">
+    <div class="flex justify-between items-center">
+      <h4 class="text-xl font-bold" contenteditable="true">Chrona — Co-founder</h4>
+      <button class="toggle-btn text-blue-600 font-semibold">Подробнее</button>
+    </div>
+    <p class="text-sm text-gray-600 mb-2" contenteditable="true">Апрель 2024 — Апрель 2025 (1 год 1 месяц)</p>
+    <div class="hidden-content">
+      <p contenteditable="true">
+        Web-3 HR-агентство. С нуля создали услугу, протестировали гипотезы, запустили на рынок. Достигли первых чеков через 6 месяцев. Выросли до 12 человек. Сферы услуг: рекрутинг для крипто-индустрии; AI-боты для автоматизации HR-задач.
+      </p>
+    </div>
+  </div>
+
+  <div class="bg-white bg-opacity-70 p-4 rounded-xl shadow-md mb-4">
+    <div class="flex justify-between items-center">
+      <h4 class="text-xl font-bold" contenteditable="true">EMCD — HRBP</h4>
+      <button class="toggle-btn text-blue-600 font-semibold">Подробнее</button>
+    </div>
+    <p class="text-sm text-gray-600 mb-2" contenteditable="true">Октябрь 2021 — Август 2024 (2 года 11 месяцев)</p>
+    <div class="hidden-content">
+      <p contenteditable="true">
+        Активно развивала распределенный криптостартап. Строила процессы с нуля: подбор (рост с 40 до 180), бюджетирование, PeopleForce, онбординг, бенефиты, wiki, автоматизация HR через AI.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="bg-white bg-opacity-70 p-4 rounded-xl shadow-md">
+  <h3 class="text-2xl font-semibold mb-2">Образование</h3>
+  <p contenteditable="true">Санкт-Петербургский государственный инженерно-экономический университет (ИНЖЭКОН), 2012 — Экономическая социология</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="bg-white bg-opacity-70 p-4 rounded-xl shadow-md">
+  <h3 class="text-2xl font-semibold mb-2">Навыки</h3>
+  <div class="flex flex-wrap gap-2">
+    <span class="px-3 py-1 bg-blue-200 rounded-full" contenteditable="true">Рекрутмент</span>
+    <span class="px-3 py-1 bg-blue-200 rounded-full" contenteditable="true">HR-бренд</span>
+    <span class="px-3 py-1 bg-blue-200 rounded-full" contenteditable="true">Agile</span>
+  </div>
+</section>
+
+<!-- ACTION BUTTONS -->
+<div class="flex gap-4 mt-6">
+  <button id="save" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Сохранить</button>
+  <button id="reset" class="bg-gray-500 text-white px-4 py-2 rounded-lg">Сбросить</button>
+  <button id="download" class="bg-green-600 text-white px-4 py-2 rounded-lg">Скачать PDF</button>
+</div>
+
+</main>
+
+<script>
+// Toggle details
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.closest('div').nextElementSibling.nextElementSibling;
+    content.classList.toggle('open');
+    btn.textContent = content.classList.contains('open') ? 'Скрыть' : 'Подробнее';
+  });
+});
+
+// Save to LocalStorage
+document.getElementById('save').addEventListener('click', () => {
+  const resume = document.getElementById('resume').innerHTML;
+  localStorage.setItem('resumeData', resume);
+  alert('Изменения сохранены!');
+});
+
+// Reset
+document.getElementById('reset').addEventListener('click', () => {
+  localStorage.removeItem('resumeData');
+  location.reload();
+});
+
+// Load saved data
+window.addEventListener('load', () => {
+  const data = localStorage.getItem('resumeData');
+  if (data) document.getElementById('resume').innerHTML = data;
+});
+
+// Download PDF
+document.getElementById('download').addEventListener('click', () => {
+  const element = document.getElementById('resume');
+  html2pdf().from(element).save('resume.pdf');
+});
+</script>
+
+</body>
+</html>
